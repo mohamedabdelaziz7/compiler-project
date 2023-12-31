@@ -1,6 +1,5 @@
 import re
 
-
 class LexicalAnalyzer:
     # Token row
     lin_num = 1
@@ -64,12 +63,12 @@ class LexicalAnalyzer:
             elif token_type == 'MISMATCH':
                 raise RuntimeError('%r unexpected on line %d' % (token_lexeme, self.lin_num))
             else:
-                    col = m.start() - lin_start
-                    column.append(col)
-                    token.append(token_type)
-                    lexeme.append(token_lexeme)
-                    row.append(self.lin_num)
-                    # To print information about a Token
-                    print('Token = {0}, Lexeme = \'{1}\', Row = {2}, Column = {3}'.format(token_type, token_lexeme, self.lin_num, col))
+                col = m.start() - lin_start
+                column.append(col)
+                token.append(token_type)
+                lexeme.append(token_lexeme)
+                row.append(self.lin_num)
+                # To print information about a Token
+                print('Token = {0}, Lexeme = \'{1}\', Row = {2}, Column = {3}'.format(token_type, token_lexeme, self.lin_num, col))
 
         return token, lexeme, row, column
